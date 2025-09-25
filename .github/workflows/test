@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Voufodaryne | Marketing & Info Systems</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Voufodaryne</h1>
+      <p class="subtitle">Marketing & Information Systems Portfolio</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="container">
+      <h2>About Me</h2>
+      <p>
+        Passionate about bridging Marketing and Information Systems, I leverage technology and strategy to drive business results. My journey blends digital marketing expertise with hands-on experience in information systems—empowering innovative, data-driven solutions.
+      </p>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Skills & Competencies</h2>
+      <ul class="skills-list">
+        <li>Digital Marketing</li>
+        <li>Data Analysis & Visualization</li>
+        <li>CRM & Automation</li>
+        <li>Web Technologies</li>
+        <li>Project Management</li>
+        <li>Marketing Strategy</li>
+        <li>Information Systems Integration</li>
+        <li>Content Management Systems (CMS)</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div id="project-list">
+        <!-- Projects will be loaded here from projects.json -->
+      </div>
+    </section>
+
+    <section id="testimonials" class="container">
+      <h2>Testimonials</h2>
+      <blockquote>
+        “A rare talent who combines marketing vision with technical execution.”<br>
+        <span>- Former Manager</span>
+      </blockquote>
+      <blockquote>
+        “Transformed our digital campaigns through smart use of analytics and automation.”<br>
+        <span>- Client</span>
+      </blockquote>
+    </section>
+
+    <section id="resume" class="container">
+      <h2>Resume / CV</h2>
+      <a class="resume-link" href="assets/voufodaryne-resume.pdf" download>Download PDF Resume</a>
+      <p>Or <a href="assets/voufodaryne-resume.pdf" target="_blank">view online</a>.</p>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+        <a href="https://github.com/voufodaryne-designer" target="_blank">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Voufodaryne. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Minimal JS to load projects.json
+    fetch('projects.json')
+      .then(response => response.json())
+      .then(projects => {
+        const list = document.getElementById('project-list');
+        projects.forEach(prj => {
+          const div = document.createElement('div');
+          div.className = 'project';
+          div.innerHTML = `<strong>${prj.title}</strong><p>${prj.description}</p><span>${prj.tech}</span>`;
+          list.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
